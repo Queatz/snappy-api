@@ -5,7 +5,7 @@
 Village provides a public API.  You can use this to embed real-time, relevant information into your website.
 For example, if you host an acting workshop, it may be useful to your visitors to contain a real-time list of nearby actors embedded in your site.
 
-You need an account to use the API, and then can use the auth token generated to make additional requests.
+You need a Village account to use the API, and then can use the auth token generated to make additional requests.
 
 All dates are described as strings and in the following format: `"June 30, 2009 7:03:47 AM PDT"`
 
@@ -37,6 +37,10 @@ All API calls are structured in this way.
 You can use this token for experimentation:
 
 `ya29.GAK0vfmiAKwDf8zPm0-oRINjOSlRpwREfdiY2VWWCUx1Y8w_1DS8-LaNL7j19dPzgCGWNes`
+
+### Creating a new user
+
+Hitting `http://queatz-snappy.appspot.com/api/me?auth=token&email=string` will create an new user where `auth` is a Google token and `email` is a valid email.
 
 ## Getting nearby People, Meets, Locations, and Quests
 
