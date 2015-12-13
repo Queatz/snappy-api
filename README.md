@@ -36,13 +36,13 @@ All API calls are structured in this way.
 
 You can use this token for experimentation:
 
-`ya29.GAK0vfmiAKwDf8zPm0-oRINjOSlRpwREfdiY2VWWCUx1Y8w_1DS8-LaNL7j19dPzgCGWNes`
+`ya29.OwK_gZu6kwBy5Q_N5GkTZvVC1aNJinY4mNl9i3P2joKaXt5UqdFbXusCu0wW1CExbzlEX1U`
 
 ### Creating a new user
 
 Hitting `http://queatz-snappy.appspot.com/api/me?auth=token&email=string` will create an new user where `auth` is a Google token and `email` is a valid email.
 
-## Getting nearby People, Meets, Locations, and Quests
+## Getting nearby People, Parties, Locations
 
 #### `GET /api/here?latitude=float&longitude=float`
 
@@ -52,8 +52,6 @@ This will return a json object with things of interest near the provided locatio
 {
     "parties": [],
     "people": [],
-    "locations": [],
-    "quests": []
 }
 ```
 
@@ -176,65 +174,6 @@ Remove interest in joining.
 #### `POST /api/:id?full=true`
 
 As a host, remove a meet from the public listing and stop accepting new join requests.
-
-
-## Quests
-
-```json
-{
-    "name": "Find",
-    "details": "Cubs",
-    "reward": "Cos",
-    "status": "open",
-    "time": "Anytime",
-    "opened": "October 21, 2015 6:45:06 AM UTC",
-    "teamSize": 1,
-    "team": [],
-    "host": {
-        "firstName": "Jacob",
-        "lastName": "Ferrero",
-        "imageUrl": "https://lh3.googleusercontent.com/-_u9tF59VLug/AAAAAAAAAAI/AAAAAAADgIQ/OfkFt0gC2ec/photo.jpg?sz=50",
-        "id": "5172910820877699443"
-    },
-    "id": "-1345780518205787420"
-}
-```
-
-#### `GET /api/quest/:id`
-
-Get information on a specific quest.
-
-#### `POST /api/quest?...`
-
-Query parameters:
-
-* `team_size` The size of the team.  Between 1 and 6.
-* `reward` The offered reward upon quest completion
-* `name` The quest's name
-* `details` The full details of the quest
-* `time` The time of day the quest should be started. One of:
-  * `"Anytime"`
-  * `"Early Morning"`
-  * `"Morning"`
-  * `"Day"`
-  * `"Evening"`
-  * `"Late Evening"`
-  * `"Night"`
-* `localId` Optionally associate with a local optimistically created object that will be returned in the response
-
-Open a new quest for public consumption.
-
-#### `POST /api/quest/:id?start=true`
-
-Start or join a quest.
-
-#### `POST /api/quest/:id?complete=true`
-
-As the quest poster, mark the quest as successfully completed.
-
-#### `DELETE /api/quest/:id`
-
-As the poster, delete a quest.
 
 
 ## Locations
