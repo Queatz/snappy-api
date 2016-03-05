@@ -76,7 +76,7 @@ Update the text on your profile.
 
 Add a new photo to your profile feed with a `photo` parameter in the `multipart/form-data` body and an optional `message` string parameter.
 
-#### `POST /api/me/offers?details=string&price=number[&localId=string]`
+#### `POST /api/me/offers?details=string&price=number[&unit=string&localId=string]`
 
 Add a new offer to your profile.
 
